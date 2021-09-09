@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int num,digit1,digit4,sum;
+    int num,digit1,digit4;
     printf("Enter the 4 digit number:-");
     scanf("%d",&num);
 
@@ -11,8 +11,9 @@ int main()
     digit4= num%10;
     printf("Last Digit=%d\n",digit4);
 
-    sum=digit1+digit4;
-    printf("\nSum of 1st & Last digit=%d\n",sum);
+    printf("\nSum of 1st & Last digit=%d\n",digit1+digit4);
     return 0;
 }
+
+
 
