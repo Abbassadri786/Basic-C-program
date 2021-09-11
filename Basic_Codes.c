@@ -48,6 +48,24 @@ printf("\nAvg marks of 5 subjects=%0.1f\n",Avg);
 
 return 0;
 }
+// Area of rectangle & Circle
 
+#include<stdio.h>
+int main()
+{
+float A_circle,A_Rectangle,r,l,b;
+
+printf("Enter radius of circle:-");
+scanf("%f",&r);
+A_circle= 3.14*r*r;
+printf("Area of circle=%0.1f\n",A_circle);
+
+printf("Enter Lenght & Breadth for rectangle:-");
+scanf("%f %f",&l,&b);
+A_Rectangle= l*b;
+printf("Area of Rectangle=%0.1f\n",A_Rectangle);
+
+return 0;
+}
 
 
