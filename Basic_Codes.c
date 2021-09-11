@@ -35,4 +35,19 @@ printf("\n Simple Interest is : %0.1f\n", SI);
 return 0;
 }
 
+//Average of 5 subjects
+#include<stdio.h>
+int main()
+{
+float Maths,Hindi,English,Evs,Science,Avg;
+printf("Enter marks for 5 subjects:-");
+scanf("%f%f%f%f%f",&Maths,&Hindi,&English,&Evs,&Science);
+
+Avg=(Maths+Hindi+English+Evs+Science)/5;
+printf("\nAvg marks of 5 subjects=%0.1f\n",Avg);
+
+return 0;
+}
+
+
 
