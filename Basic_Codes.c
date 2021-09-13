@@ -67,5 +67,20 @@ printf("Area of Rectangle=%0.1f\n",A_Rectangle);
 
 return 0;
 }
+// Farehnite to celsius 
+
+#include <stdio.h>
+int main()
+{
+    float cel,fah;
+    printf("Enter the temp in farhenite-");
+    scanf("%f",&fah);
+
+    cel=(fah-32)*0.55;
+    printf("\nTemp in Celsius=%0.2f\n",cel);
+
+    return 0;
+}
+
 
 
