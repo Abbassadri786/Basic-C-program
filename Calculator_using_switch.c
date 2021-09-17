@@ -1,13 +1,14 @@
 #include <stdio.h>
 int main()
 {
-    int a,b,opr;
+    int a,b;
+    char opr;
 
     printf("Enter 2 numbers to apply operation:-\n");
     scanf("%d%d",&a,&b);
 
     printf("\nOperation:-\n");
-    scanf("%d",&opr);
+    scanf("%c",&opr);
 
      switch(opr)
     {
@@ -28,7 +29,7 @@ int main()
     break;
 
     default:
-    printf("This operation is not applicable");
+    printf("Operation incorrect!");
     break;
     }
 
