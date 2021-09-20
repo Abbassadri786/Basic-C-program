@@ -15,6 +15,10 @@ int main()
     {
         printf("Point lies on X Axis");
     }
+    else if(x1==0 && y1==0)
+    {
+        printf("Point lies on Origin");
+    }
     else
     {
         printf("Point lies somewhere on X & Y plane");
