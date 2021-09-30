@@ -3,9 +3,11 @@
 int main()
 {
     int num,i,flag=0;
-    scanf("%d",num);
+    scanf("%d",&num);
     
-    if(num>=1000)
+    while(num!=0)
+    {
+        if(num>=1000)
     {
         i=num/1000;
         num %= 1000;
@@ -90,6 +92,7 @@ int main()
         i=num/1;
         num %= 1;
         printf("%d*I",i);
+    }
     }
     
     return 0;
