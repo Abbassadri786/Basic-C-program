@@ -4,10 +4,10 @@ int main()
 {
    int i,n,pos;
 
-   printf("Enter the size of an array:-");
+   printf("Enter the size of an array:-\n");
    scanf("%d",&n);
 
-   printf("Enter the position to delete desired element:-");
+   printf("Enter the position to delete desired element:-\n");
    scanf("%d",&pos);
 
    int arr[n];
@@ -16,6 +16,8 @@ int main()
    {
        scanf("%d\n",&arr[i]);
    }
+   printf("Array formed after deleting the desired element:-\n");
+   
    for(i=0;i<n;i++)
    {
        if(i!=pos-1)
@@ -26,4 +28,3 @@ int main()
 
     return 0;
 }
-
