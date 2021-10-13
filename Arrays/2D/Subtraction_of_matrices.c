@@ -27,7 +27,7 @@ int main()
        for(j=0;j<size2;j++)
        {
            if(size1==size2)
-           printf("%d   ", sum[i][j]);
+           printf("%d   ", sub[i][j]);
            
        }
        
