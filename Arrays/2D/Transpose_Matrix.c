@@ -17,8 +17,9 @@ int main()
    
    for (i = 0; i < m; i++) {
       for (j = 0 ; j < n; j++) {
+          Tranp[j][i]=mtx[i][j];
           
-          printf("%d\t",mtx[j][i]);
+          printf("%d\t",Tranp[i][j]);
          
       }
       printf("\n");
