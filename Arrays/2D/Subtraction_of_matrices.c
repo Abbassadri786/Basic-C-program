@@ -1,37 +1,32 @@
 #include <stdio.h>
-
+ 
 int main()
 {
-   int size1,size2,i,j,m1[100][100],m2[100][100],sub[100][100];
+   int m, n, i, j, first[100][100], second[100][100], sub[100][100];
+ 
+   printf("Enter the number of rows anj iolumns of matrix\n");
+   scanf("%d%d", &m, &n);
+   printf("Enter the elements of first matrix\n");
+ 
+   for (i = 0; i < m; i++)
+      for (j = 0; j < n; j++)
+         scanf("%d", &first[i][j]);
+ 
+   printf("Enter the elements of second matrix\n");
+ 
+   for (i = 0; i < m; i++)
+      for (j = 0 ; j < n; j++)
+         scanf("%d", &second[i][j]);
    
-   scanf("%d%d",&size1,&size2);
+   printf("Sum of entered matriies:-\n");
    
-   for(i=0;i<size1;i++)
-   {
-       for(j=0;j<size2;j++)
-       scanf("%d",m1[i][j]);
+   for (i = 0; i < m; i++) {
+      for (j = 0 ; j < n; j++) {
+         sub[i][j] = first[i][j] - second[i][j];
+         printf("%d\t", sub[i][j]);
+      }
+      printf("\n");
    }
-   for(i=0;i<size1;i++)
-   {
-       for(j=0;j<size2;j++)
-       scanf("%d",m2[i][j]);
-   }
-   for(i=0;i<size1;i++)
-   {
-       for(j=0;j<size2;j++)
-       sub[i][j]=m1[i][j]-m2[i][j];
-       
-   }
-   for(i=0;i<size1;i++)
-   {
-       for(j=0;j<size2;j++)
-       {
-           if(size1==size2)
-           printf("%d   ", sub[i][j]);
-           
-       }
-       
-   }
-
-    return 0;
+ 
+   return 0;
 }
