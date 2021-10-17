@@ -1,29 +1,35 @@
 #include <stdio.h>
- 
+
 int main()
 {
-   int m, n,temp=0, i, j, mtx[100][100], Tranp[100][100];
- 
-   printf("Enter the number of rows anj iolumns of matrix\n");
-   scanf("%d%d", &m, &n);
-   printf("Enter the elements of matrix\n");
- 
-   for (i = 0; i < m; i++)
-      for (j = 0; j < n; j++)
-         scanf("%d", &mtx[i][j]);
+    int mtx[100][100],i,j,transp[100][100],r,c;
+    
+    scanf("%d%d",&r,&c);
+    
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&mtx[i][j]);
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            transp[i][j]=mtx[j][i];
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf(" %d ",transp[i][j]);
+            if(j==r-1)
+            printf("\n");
+        }
+    }
+    
 
-   
-   printf("Transpose of entered matriies:-\n");
-   
-   for (i = 0; i < m; i++) {
-      for (j = 0 ; j < n; j++) {
-          Tranp[j][i]=mtx[i][j];
-          
-          printf("%d\t",Tranp[i][j]);
-         
-      }
-      printf("\n");
-   }
- 
-   return 0;
+    return 0;
 }
