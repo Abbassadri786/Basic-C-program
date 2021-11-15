@@ -2,7 +2,7 @@
 int main()
 
 {
-   int i,j,n,count=0,temp=0;
+   int i,j,n,temp;
 
    scanf("%d",&n);
 
@@ -15,7 +15,7 @@ int main()
 
 for(i=0;i<n;i++)
    {
-       for(j=0;j<n;j++)
+       for(j=i+1;j<n;j++)
        {
            if(arr[j]>arr[i] )
            {
