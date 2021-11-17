@@ -14,7 +14,7 @@ int main() {
     {
         scanf("%lld",&arr[i]);
     }
-    long long int n=size/arr[0];
+    long long int n=size;
     
     for (i = 0; i < n; i++) 
     {
@@ -33,6 +33,7 @@ int main() {
             sum = sum + arr[j];
             
         }
+        sum=0;
     }
     
     
