@@ -17,7 +17,7 @@ for(i=0;i<n;i++)
    {
        for(j=i+1;j<n;j++)
        {
-           if(arr[j]>arr[i] )
+           if(arr[j]<arr[i] )
            {
             temp=arr[j];
             arr[j]=arr[i];
@@ -28,7 +28,7 @@ for(i=0;i<n;i++)
    }
        
        for(i=0;i<n;i++)
-       printf(" %d ",arr[i]);
+       printf("%d ",arr[i]);
      
    
    return 0;
