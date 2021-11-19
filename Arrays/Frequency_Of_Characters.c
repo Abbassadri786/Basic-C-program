@@ -9,7 +9,7 @@ int main()
     for(i='A';i<='z';i++)
     {
         freq=0;
-        for(j=0;str[j]!='\o';j++)
+        for(j=0;str[j]!='\0';j++)
         {
             if(i==str[j])
             R=str[j];
