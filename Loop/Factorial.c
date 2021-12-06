@@ -6,7 +6,7 @@ int main()
     printf("Enter the number you want factorial:-");
     scanf("%d",&num);
 
-    for(i=1; i<num ;i++)
+    for(i=1; i<=num ;i++)
     {
         fac=fac*i;
 
