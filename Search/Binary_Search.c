@@ -1,37 +1,36 @@
-#include<stdio.h>
- 
-int main()
-{
-    int a[100],n,num,i,low,high,mid,flag=0;
- 
-    printf("Enter size of array:\n");
-    scanf("%d",&n);
+
+#include <iostream>
+using namespace std;
+
+int binary_search(int arr[], int n, int key){
+    int s = 0;
+    int e = n-1;
     
-    for(i=0; i<n; i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    printf("Enter element to be search:\n");
-    scanf("%d",&num);
- 
-    low=0;
-    high=n-1;
-    while(low<=high)
-    {
-        mid=(low+high)/2;
-        if(a[mid]==num)
-        {
-            printf("Element found at %d position",mid + 1);
-            flag=1;
-            break;
+    while(s<=e){
+        int mid=(s+e)/2;
+        if(arr[mid]==key){
+            return mid+1;
         }
-        if(a[mid]>num)
-            high=mid-1;
-        else
-            low=mid+1;
+        else if(arr[mid]<key){
+            s=mid+1;
+        }
+        else{
+            e=mid-1;
+        }
     }
-    if(flag=0)
-        printf("No such element is found");
- 
+    return -1;
+}
+int main() {
+    // BINARY search
+    int n,key;
+    cin>>n>>key;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    cout<<binary_search(arr, n, key)<<endl;
+    
+    
+
     return 0;
 }
