@@ -70,7 +70,7 @@ int main() {
     insertAtTail(tail, 40);
     print(head);
     
-    insertAtPosition(head,tail,6,25);
+    insertAtPosition(head,tail,3,25);
     print(head);
 
     return 0;
