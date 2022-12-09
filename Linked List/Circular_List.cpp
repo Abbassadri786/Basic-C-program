@@ -14,8 +14,8 @@ class Node{
   ~Node(){
       int value = this->data;
       while(this->next != NULL){
-          delete next;
           next = NULL;
+          delete next;
       }
   }
 };
@@ -46,10 +46,37 @@ void print(Node* &tail){
         tail = tail->next;
     }while(tail != temp);
 }
+void deleteNode(Node* &tail, int value){
+    //for Empty Case
+    if(tail==NULL){
+        cout<<"List is empty,Please check again"<<endl;
+    }
+    //for non-empty case
+    else{
+        Node* prev=tail;
+        Node* curr = prev-> next;
+        while(curr->data != value){
+            prev = curr;
+            curr= curr->next;
+        }
+        prev->next = curr->next;
+        if(tail==curr){
+            tail=prev;
+        }
+        curr->next = NULL;
+        delete curr;//memory is freed.
+    }
+}
 int main() {
     Node* tail = NULL;
     
-    insertNode(tail ,5,3);
+    insertNode(tail,0,1);
+    print(tail);
+    insertNode(tail,1,2);
+    print(tail);
+    insertNode(tail,2,4);
+    print(tail);
+    insertNode(tail,3,6);
     print(tail);
     
     
