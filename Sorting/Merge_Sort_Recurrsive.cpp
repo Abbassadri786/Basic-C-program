@@ -1,84 +1,89 @@
-#include<iostream>
+// Merge Sort
+#include <iostream>
 using namespace std;
 
-void merge(int *arr, int s, int e) {
-
+void merge(int arr[], int s, int e){
     int mid = (s+e)/2;
-
-    int len1 = mid - s + 1;
-    int len2 = e - mid;
-
-    int *first = new int[len1];
-    int *second = new int[len2];
-
-    //copy values
-    int mainArrayIndex = s;
-    for(int i=0; i<len1; i++) {
-        first[i] = arr[mainArrayIndex++];
+    int len1 = mid-s+1;
+    int len2 = e-mid;
+    // naye temp array liye he
+    int *left = new int(len1);
+    int *right = new int(len2);
+    
+    int k=s;
+    // left waale me value copy kari
+    for(int i=0; i<len1; i++){
+        left[i] = arr[k];
+        k++;
     }
-
-    mainArrayIndex = mid+1;
-    for(int i=0; i<len2; i++) {
-        second[i] = arr[mainArrayIndex++];
+    // right waale me value copy kari
+    k = mid+1;
+    for(int i=0; i<len2; i++){
+        right[i] = arr[k];
+        k++;
     }
-
-    //merge 2 sorted arrays     
-    int index1 = 0;
-    int index2 = 0;
-    mainArrayIndex = s;
-
-    while(index1 < len1 && index2 < len2) {
-        if(first[index1] < second[index2]) {
-            arr[mainArrayIndex++] = first[index1++];
+    
+    int left_idx = 0;
+    int right_idx = 0;
+    int main_idx = s;
+    // Compare kari dono subarrays mese values ko
+    while(left_idx < len1 && right_idx < len2){
+        if(left[left_idx] < right[right_idx]){
+            arr[main_idx] = left[left_idx];
+            main_idx++;
+            left_idx++;
         }
         else{
-            arr[mainArrayIndex++] = second[index2++];
+            arr[main_idx] = right[right_idx];
+            main_idx++;
+            right_idx++;
         }
-    }   
-
-    while(index1 < len1) {
-        arr[mainArrayIndex++] = first[index1++];
     }
-
-    while(index2 < len2 ) {
-        arr[mainArrayIndex++] = second[index2++];
+    // remaining left waale array ki values daali
+    while(left_idx<len1){
+        arr[main_idx] = left[left_idx];
+        main_idx++, left_idx++;
     }
-
-    delete []first;
-    delete []second;
-
+    // remaining right waale array ki values daali
+    while(right_idx<len2){
+        arr[main_idx] = right[right_idx];
+        main_idx++, right_idx++;
+    }
+    
 }
 
-void mergeSort(int *arr, int s, int e) {
-
-    //base case
-    if(s >= e) {
+void mergeSort(int arr[], int s, int e){
+    if(s>=e){
         return;
     }
-    
     int mid = (s+e)/2;
-
-    //left part sort karna h 
-    mergeSort(arr, s, mid);
     
-    //right part sort karna h 
+    //left wala array sort karrke do
+    mergeSort(arr, s, mid);
+    //Righr wala array sort karrke do
     mergeSort(arr, mid+1, e);
-
-    //merge
+    
+    // dono arrays ko merge kardo
     merge(arr, s, e);
-
-}
+} 
 
 int main() {
-
-    int arr[15] = {3,7,0,1,5,8,3,2,34,66,87,23,12,12,12};
-    int n = 15;
-
-    mergeSort(arr, 0, n-1);
-
-    for(int i=0;i<n;i++){
-        cout << arr[i] << " ";
-    } cout << endl;
+    int size;
+    cin>>size;
+    int arr[size];
+    //Taking input of array
+    for(int i=0; i<size; i++)cin>>arr[i];
+    
+    int s =0;
+    int e= size-1;
+    
+    mergeSort(arr,s,e);
+    //Printing of array
+    for(int i=0; i<size; i++){
+        cout<<arr[i]<<" ";
+    }
 
     return 0;
 }
+
+// Time Complexity = O(nlogn)
