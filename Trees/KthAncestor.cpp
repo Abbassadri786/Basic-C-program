@@ -30,6 +30,7 @@ bool kthAncestor(Node* root, int &k, int p){
     }
     if(k == 0){
         cout<<"Answer: "<<root -> data<<endl;
+	k = -1;
     }
     return leftAns || rightAns;
 }
