@@ -16,6 +16,8 @@ class Solution
             curr = forward;
             c++;
         }
+        // We still have nodes to reverse
+        // Aage ke groups ka head forward he
         if(forward!=NULL){
             head->next = reverse(forward,k);
         }
