@@ -19,7 +19,7 @@ Node* reverseLinkedList(Node* &head)
     // Write your code here
     Node* prev=NULL;
     Node* curr=head;
-    Node* forward=NULL;
+    Node* forward= curr -> next;
     
     while(curr!=NULL){
         forward = curr->next;
