@@ -6,7 +6,7 @@ class Solution
         // Complete this method
         node* curr = head;
         node* prev = NULL;
-        node* forward;
+        node* forward = curr -> next;
         int c=0;
         
         while(curr!=NULL && c<k){
