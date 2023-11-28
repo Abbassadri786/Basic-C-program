@@ -1,6 +1,8 @@
 //{ Driver Code Starts
 // driver
-
+// Keep in mind that the sum and carry are to be forwarded and added at last
+// Sum = A Xor B
+// Carry = A And B
 #include <bits/stdc++.h>
 using namespace std;
 
